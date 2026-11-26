@@ -12,10 +12,10 @@
 
 | Componente | Distribución / Tecnología | Versión Oficial Vigente | Arquitectura / Familia | Gestor de Paquetes | Sistema de Archivos por Defecto | Fuente Oficial y Fecha de Consulta |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **VM Gráfica (`g05-grafica`)** | **Zorin OS** (Core) | Zorin OS 17.3 (Base Ubuntu 22.04.5 LTS) | x86_64 (64-bit) / Familia Debian-Ubuntu | `apt` / `dpkg` | `ext4` | [Zorin OS Official](https://zorin.com/os/)  |
-| **VM Consola (`g05-consola`)** | **Fedora Server** | Fedora Server 42 / 43 (Estable vigente) | x86_64 (64-bit) / Familia Fedora-RHEL | `dnf` / `rpm` | `XFS` (sobre LVM por defecto; particionado manual `ext4`/`XFS`) | [Fedora Server Docs](https://docs.fedoraproject.org/en-US/fedora-server/)  |
-| **Contenedor (Dockerfile)** | **Ubuntu** (Imagen oficial) | `ubuntu:24.04` (Noble Numbat LTS) | linux/amd64 / Familia Debian-Ubuntu | `apt` | `overlay2` (Docker) | [Docker Hub - Ubuntu](https://hub.docker.com/_/ubuntu)  |
-| **Orquestador** | **Kubernetes (Minikube)** | Minikube estable (`v1.34+`) con driver Docker | x86_64 | `kubectl` | N/A | [Minikube Docs](https://minikube.sigs.k8s.io/docs/start/)  |
+| **VM Gráfica (`g05-grafica`)** | **Zorin OS** (Core) | Zorin OS 18.1 (Base Ubuntu LTS) | x86_64 (64-bit) / Familia Debian-Ubuntu | `apt` / `dpkg` | `ext4` | [Zorin OS Official](https://zorin.com/os/) |
+| **VM Consola (`g05-consola`)** | **Fedora Server** | Fedora Server 45 (Estable vigente) | x86_64 (64-bit) / Familia Fedora-RHEL | `dnf` / `rpm` | `XFS` (particionado manual `XFS`) | [Fedora Server Docs](https://docs.fedoraproject.org/en-US/fedora-server/) |
+| **Contenedor (Dockerfile)** | **Ubuntu** (Imagen oficial) | `ubuntu:24.04` (Noble Numbat LTS) | linux/amd64 / Familia Debian-Ubuntu | `apt` | `overlay2` (Docker) | [Docker Hub - Ubuntu](https://hub.docker.com/_/ubuntu) |
+| **Orquestador** | **Kubernetes (Minikube)** | Minikube estable (`v1.34+`) con driver Docker | x86_64 | `kubectl` | N/A | [Minikube Docs](https://minikube.sigs.k8s.io/docs/start/) |
 
 *Fuentes verificadas el 18 de noviembre de 2026.*
 
