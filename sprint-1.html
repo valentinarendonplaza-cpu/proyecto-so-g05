@@ -145,6 +145,44 @@ wget --version</pre>
 <h3>Explicación</h3>
 <p>La primera captura muestra la distribución completa de las seis particiones en el disco de 25 GB mediante <code>lsblk</code>, el porcentaje de espacio ocupado en cada una con <code>df -h</code> y el archivo <code>/etc/fstab</code> donde se verifica que quedaron configuradas para montarse solas al encender la máquina. La segunda captura confirma que las cinco herramientas (<code>make</code>, <code>rsync</code>, <code>curl</code>, <code>git</code> y <code>wget</code>) quedaron instaladas y responden correctamente al consultar su versión.</p>
 
+<h2 id="punto-3">Punto 3 · Red</h2>
+
+<h3>Qué hicimos</h3>
+<p>En VirtualBox le configuramos dos tarjetas de red a cada máquina virtual: el Adaptador 1 en modo <strong>NAT</strong> (<code>enp0s3</code>) para que ambas tengan salida a internet y puedan descargar paquetes, y el Adaptador 2 en modo <strong>Red solo-anfitrión</strong> (<code>enp0s8</code>) para conectar las dos máquinas entre sí en una red privada. Después revisamos las IP asignadas con <code>ip -br a</code> y probamos la conexión de ida y vuelta haciendo <code>ping</code> entre las dos VMs.</p>
+
+<h3>Direcciones de cada VM</h3>
+<table>
+  <tr><th>VM</th><th>Interfaz</th><th>Adaptador</th><th>Dirección</th></tr>
+  <tr><td rowspan="2">g05-grafica</td><td>enp0s3</td><td>NAT</td><td>10.0.2.15/24</td></tr>
+  <tr><td>enp0s8</td><td>Solo-anfitrión</td><td>192.168.56.101/24</td></tr>
+  <tr><td rowspan="2">g05-consola</td><td>enp0s3</td><td>NAT</td><td>10.0.2.15/24</td></tr>
+  <tr><td>enp0s8</td><td>Solo-anfitrión</td><td>192.168.56.102/24</td></tr>
+</table>
+
+<h3>Comandos usados</h3>
+<pre># En g05-grafica
+date
+ip -br a
+ping -c 3 192.168.56.102
+
+# En g05-consola
+date
+ip -br a
+ping -c 3 192.168.56.101</pre>
+
+<h3>Capturas</h3>
+<figure>
+  <img src="img/sprint-1/e3-red_grafica.png" alt="ip -br a y ping a 192.168.56.102 desde la VM gráfica" loading="lazy">
+  <figcaption>g05-grafica: direcciones y ping hacia la consola (192.168.56.102).</figcaption>
+</figure>
+<figure>
+  <img src="img/sprint-1/e3-red-consola.png" alt="ip -br a y ping a 192.168.56.101 desde la VM consola" loading="lazy">
+  <figcaption>g05-consola: direcciones y ping hacia la gráfica (192.168.56.101).</figcaption>
+</figure>
+
+<h3>Explicación</h3>
+<p>En ambas capturas se ve que las dos interfaces quedaron levantadas (<code>UP</code>): la <code>enp0s3</code> con la IP <code>10.0.2.15/24</code> del adaptador NAT y la <code>enp0s8</code> con las direcciones <code>192.168.56.101</code> en la gráfica y <code>192.168.56.102</code> en la consola. Al lanzar 3 paquetes con <code>ping</code> en ambos sentidos no se perdió ninguno (0 % de pérdida), confirmando que las máquinas se ven perfectamente en la red interna.</p>
+
 <h2 id="punto-4">Punto 4 · SSH</h2>
 
 <h3>Qué hicimos</h3>
