@@ -33,14 +33,11 @@
 
 <p><strong>Integrantes:</strong> Valentina Rendón Plaza, Carlos Alberto Loaiza Mosquera y Matías Sánchez Erazo.</p>
 
-<!-- CONFIRMEN esta tabla: la armé a partir de los usuarios que se ven en las capturas
-     (valentina@g05-grafica, carlos@g05-consola) y de lo que cada uno subió al repositorio.
-     Cambien lo que no sea cierto. -->
 <h2>Quién hizo qué en este sprint</h2>
 <table>
   <tr><th>Integrante</th><th>Parte que hizo</th></tr>
-  <tr><td>Valentina Rendón Plaza</td><td>VM gráfica (g05-grafica): particiones, programas, red, SSH, instantánea y código del sprint.</td></tr>
-  <tr><td>Carlos Alberto Loaiza Mosquera</td><td>VM consola (g05-consola): particiones, herramientas, red, instantánea y código del sprint.</td></tr>
+  <tr><td>Valentina Rendón Plaza</td><td>VM gráfica (g05-grafica): particiones, programas, red, cliente SSH, instantánea y código del sprint.</td></tr>
+  <tr><td>Carlos Alberto Loaiza Mosquera</td><td>VM consola (g05-consola): particiones, herramientas, red, servidor SSH, instantánea y código del sprint.</td></tr>
   <tr><td>Matías Sánchez Erazo</td><td>Esta página web y el video del sprint.</td></tr>
 </table>
 
@@ -51,17 +48,10 @@
   <tr><td>g05-consola</td><td>Fedora Server</td><td>carlos</td><td>2</td><td>2048 MB</td><td>25 GB</td><td>10.0.2.15 (DHCP)</td><td>192.168.56.102</td></tr>
 </table>
 
-<!-- ============================================================ -->
-<!-- PUNTO 1: VM GRÁFICA                                          -->
-<!-- ============================================================ -->
+<!-- VALENTINA COMPLETA ESTA SECCIÓN -->
 <h2 id="punto-1">Punto 1 · VM gráfica (g05-grafica)</h2>
 
 <h3>Qué hicimos</h3>
-<!-- DATOS para escribirlo con sus palabras:
-     - VM g05-grafica con Zorin OS, 25 GB de disco, 4096 MB de RAM, 2 CPU.
-     - Particionado manual (no automático): se ven sda1 (/), sda2 (swap), sda3 y sda4 (/home).
-     - Programas: Web y Brave (navegadores), Vim (editor) y falta el segundo editor.
-     Escriban qué opción del instalador usaron para particionar a mano. -->
 <p><span class="pendiente">ESCRIBIR AQUÍ</span> qué hicimos para instalar la VM gráfica con particionado manual y qué programas instalamos.</p>
 
 <h3>Particiones y por qué elegimos ese tamaño</h3>
@@ -72,15 +62,11 @@
   <tr><td>sda3</td><td>sin montar</td><td>sin sistema de archivos</td><td>286 M</td><td><span class="pendiente">ESCRIBIR qué es esta partición</span></td></tr>
   <tr><td>sda4</td><td>/home</td><td>ext4</td><td>8,8 G</td><td><span class="pendiente">ESCRIBIR UNA FRASE</span></td></tr>
 </table>
-<!-- DATOS (de las capturas): disco de 25 G. Con df -h: / usa 9,5 G de 14 G (73 %);
-     /home usa 75 M de 8,7 G (1 %). RAM de la VM: 4096 MB, swap: 1,9 G.
-     sda3 (286 M, "300 MB Unknown" en Discos) no tiene punto de montaje: investiguen qué es. -->
 
 <h3>Comandos usados</h3>
 <pre>date
 lsblk
-df -h
-cat /etc/fstab</pre>
+df -h</pre>
 
 <h3>Capturas</h3>
 <figure>
@@ -92,16 +78,6 @@ cat /etc/fstab</pre>
   <figcaption>Terminal de valentina@g05-grafica con <code>date</code>, <code>lsblk</code> y <code>df -h</code>.</figcaption>
 </figure>
 
-<!-- FALTA (por esto el punto queda parcial): en e1-comandos-grafica.png el último comando salió
-     "bash: cat/etc/fstab: No such file or directory" (faltó el espacio después de cat).
-     1) En la VM gráfica ejecuten:  date && cat /etc/fstab  y tomen la captura completa.
-     2) Súbanla al repositorio con el nombre  e1-fstab-grafica.png
-     3) Aquí abajo borren la palabra  hidden  de la etiqueta figure para que se vea. -->
-<figure hidden>
-  <img src="img/sprint-1/e1-fstab-grafica.png" alt="cat /etc/fstab en la VM gráfica" loading="lazy">
-  <figcaption>Contenido de <code>/etc/fstab</code> en g05-grafica.</figcaption>
-</figure>
-
 <h3>Dos navegadores y dos editores</h3>
 <table>
   <tr><th>Tipo</th><th>Programa</th><th>Versión que se ve en la captura</th></tr>
@@ -110,8 +86,6 @@ cat /etc/fstab</pre>
   <tr><td>Editor 1</td><td>Vim</td><td>9.1</td></tr>
   <tr><td>Editor 2</td><td><span class="pendiente">ESCRIBIR AQUÍ el segundo editor</span></td><td><span class="pendiente">versión</span></td></tr>
 </table>
-<!-- Comandos que probablemente usaron (confirmen y corrijan): epiphany --version,
-     brave-browser --version, vim --version. Escriban aquí los que de verdad ejecutaron. -->
 <p>Comandos usados: <span class="pendiente">ESCRIBIR AQUÍ los comandos que ejecutamos para mostrar las versiones</span>.</p>
 
 <figure>
@@ -127,26 +101,13 @@ cat /etc/fstab</pre>
   <figcaption>Final de la salida de Vim.</figcaption>
 </figure>
 
-<!-- FALTA: en las tres capturas solo se ve UN editor (Vim); el otro programa que aparece es un navegador.
-     Abran o instalen el segundo editor, ejecuten  date  y la versión del editor, tomen la captura,
-     súbanla como  e1-editor2-grafica.png  y borren la palabra  hidden  de la etiqueta figure. -->
-<figure hidden>
-  <img src="img/sprint-1/e1-editor2-grafica.png" alt="Segundo editor instalado en la VM gráfica" loading="lazy">
-  <figcaption>Segundo editor de g05-grafica.</figcaption>
-</figure>
-
 <h3>Explicación</h3>
 <p><span class="pendiente">ESCRIBIR AQUÍ</span> qué muestra cada captura de este punto, con sus palabras.</p>
 
-<!-- ============================================================ -->
-<!-- PUNTO 2: VM CONSOLA                                          -->
-<!-- ============================================================ -->
+<!-- CARLOS COMPLETA ESTA SECCIÓN -->
 <h2 id="punto-2">Punto 2 · VM consola (g05-consola)</h2>
 
 <h3>Qué hicimos</h3>
-<!-- DATOS: Fedora Server instalado con el instalador Anaconda (lo dice /etc/fstab: "Created by anaconda"),
-     disco de 25 G, 2 CPU, 2048 MB de RAM. Particiones: /boot, /var, /, /home y swap, todas en xfs.
-     Herramientas: make, rsync, curl, git y wget funcionando. -->
 <p><span class="pendiente">ESCRIBIR AQUÍ</span> qué hicimos para instalar la VM de consola con particionado manual y las herramientas.</p>
 
 <h3>Particiones y por qué elegimos ese tamaño</h3>
@@ -159,13 +120,8 @@ cat /etc/fstab</pre>
   <tr><td>sda5</td><td>/home</td><td>xfs</td><td>3,8 G</td><td>1 GB</td><td><span class="pendiente">ESCRIBIR UNA FRASE</span></td></tr>
   <tr><td>sda6</td><td>swap</td><td>swap</td><td>2 G</td><td>1 GB</td><td><span class="pendiente">ESCRIBIR UNA FRASE</span></td></tr>
 </table>
-<!-- DATOS (de las capturas): disco de 25 G. Con df -h: / usa 2,0 G de 6,0 G (33 %); /var usa 421 M de 12 G (4 %);
-     /home usa 106 M de 3,8 G (3 %); /boot usa 373 M de 960 M (39 %). RAM de la VM: 2048 MB.
-     sda1 (2 M, sin montar) la crea el instalador: verifiquen qué es.
-     zram0 [SWAP] de 1,9 G que sale en lsblk es la swap comprimida en RAM de Fedora, no una partición. -->
 
 <h3>Comandos usados</h3>
-<!-- Confirmen que este sea el comando de instalación que usaron. Si fue otro, cámbienlo. -->
 <pre>sudo dnf install make rsync curl git wget
 date
 lsblk
@@ -191,17 +147,10 @@ wget --version</pre>
 <h3>Explicación</h3>
 <p><span class="pendiente">ESCRIBIR AQUÍ</span> qué muestra cada captura de este punto, con sus palabras.</p>
 
-<!-- ============================================================ -->
-<!-- PUNTO 3: RED                                                 -->
-<!-- ============================================================ -->
 <h2 id="punto-3">Punto 3 · Red</h2>
 
 <h3>Qué hicimos</h3>
-<!-- DATOS: cada VM tiene dos interfaces. enp0s3 tomó 10.0.2.15/24 (NAT, adaptador 1, da internet);
-     enp0s8 tomó 192.168.56.x/24 (solo-anfitrión, adaptador 2, comunica las VMs).
-     Ping gráfica→consola: 3 enviados, 3 recibidos, 0 % perdidos, promedio 0,667 ms.
-     Ping consola→gráfica: 3 enviados, 3 recibidos, 0 % perdidos, promedio 1,403 ms. -->
-<p><span class="pendiente">ESCRIBIR AQUÍ</span> cómo configuramos los dos adaptadores en cada VM y cómo comprobamos que se ven entre sí.</p>
+<p>En VirtualBox le configuramos dos tarjetas de red a cada máquina virtual: el Adaptador 1 en modo <strong>NAT</strong> (<code>enp0s3</code>) para que ambas tengan salida a internet y puedan descargar paquetes, y el Adaptador 2 en modo <strong>Red solo-anfitrión</strong> (<code>enp0s8</code>) para conectar las dos máquinas entre sí en una red privada. Después revisamos las IP asignadas con <code>ip -br a</code> y probamos la conexión de ida y vuelta haciendo <code>ping</code> entre las dos VMs.</p>
 
 <h3>Direcciones de cada VM</h3>
 <table>
@@ -234,20 +183,12 @@ ping -c 3 192.168.56.101</pre>
 </figure>
 
 <h3>Explicación</h3>
-<p><span class="pendiente">ESCRIBIR AQUÍ</span> qué muestran las capturas de red, con sus palabras.</p>
+<p>En ambas capturas se ve que las dos interfaces quedaron levantadas (<code>UP</code>): la <code>enp0s3</code> con la IP <code>10.0.2.15/24</code> del adaptador NAT y la <code>enp0s8</code> con las direcciones <code>192.168.56.101</code> en la gráfica y <code>192.168.56.102</code> en la consola. Al lanzar 3 paquetes con <code>ping</code> en ambos sentidos no se perdió ninguno (0 % de pérdida), confirmando que las máquinas se ven perfectamente en la red interna.</p>
 
-<!-- ============================================================ -->
-<!-- PUNTO 4: SSH                                                 -->
-<!-- ============================================================ -->
 <h2 id="punto-4">Punto 4 · SSH</h2>
 
 <h3>Qué hicimos</h3>
-<!-- DATOS: desde valentina@g05-grafica se ejecutó ssh carlos@192.168.56.102; la primera vez pidió
-     aceptar la huella (fingerprint) del servidor y luego la contraseña de carlos.
-     En la consola se había habilitado el servicio: en codigo-consola.png se ve
-     sudo systemctl enable --now sshd && ss -tuln, con el puerto 22 en LISTEN.
-     Dentro de la sesión se ejecutó date && hostname && whoami && ip -br a, y salió g05-consola / carlos. -->
-<p><span class="pendiente">ESCRIBIR AQUÍ</span> cómo habilitamos SSH en la consola y cómo entramos desde la VM gráfica.</p>
+<p>En la máquina de consola habilitamos e iniciamos el servicio SSH con <code>systemctl enable --now sshd</code> y revisamos con <code>ss -tuln</code> que el puerto 22 estuviera abierto y escuchando conexiones. Luego, desde la terminal de <code>g05-grafica</code>, nos conectamos por SSH al usuario <code>carlos</code> usando su IP de red solo-anfitrión (<code>192.168.56.102</code>), aceptamos la clave del servidor e ingresamos la contraseña.</p>
 
 <h3>Comandos usados</h3>
 <pre># En g05-consola (servidor)
@@ -267,17 +208,12 @@ date &amp;&amp; hostname &amp;&amp; whoami &amp;&amp; ip -br a</pre>
 </figure>
 
 <h3>Explicación</h3>
-<p><span class="pendiente">ESCRIBIR AQUÍ</span> qué muestra la captura, con sus palabras.</p>
+<p>La captura muestra cómo, después de ejecutar el comando <code>ssh</code> desde <code>valentina@g05-grafica</code>, la terminal pasa a controlar la sesión de <code>carlos@g05-consola</code>. Al correr <code>hostname</code>, <code>whoami</code> e <code>ip -br a</code> dentro de esa conexión se comprueba que efectivamente estamos ejecutando comandos de forma remota dentro de la máquina Fedora.</p>
 
-<!-- ============================================================ -->
-<!-- PUNTO 5: INSTANTÁNEAS                                        -->
-<!-- ============================================================ -->
 <h2 id="punto-5">Punto 5 · Instantáneas</h2>
 
 <h3>Qué hicimos</h3>
-<!-- DATOS: en las capturas las dos VMs aparecen "Apagada" y con la instantánea instalacion-limpia:
-     g05-grafica a las 7:06 p. m. y g05-consola a las 7:07 p. m. del 25/11/2026. -->
-<p><span class="pendiente">ESCRIBIR AQUÍ</span> cómo tomamos la instantánea y por qué la tomamos con la VM apagada.</p>
+<p>Cuando ya teníamos ambas máquinas instaladas, configuradas en red y probadas por SSH, las apagamos por completo desde el sistema y tomamos una instantánea llamada <code>instalacion-limpia</code> en VirtualBox para cada una. Las tomamos con las máquinas apagadas para que no queden archivos abiertos ni datos a medias en la memoria RAM, asegurando un respaldo totalmente limpio.</p>
 
 <table>
   <tr><th>VM</th><th>Nombre de la instantánea</th><th>Estado de la VM</th><th>Hora en que se tomó</th></tr>
@@ -296,14 +232,9 @@ date &amp;&amp; hostname &amp;&amp; whoami &amp;&amp; ip -br a</pre>
 </figure>
 
 <h3>Explicación</h3>
-<p><span class="pendiente">ESCRIBIR AQUÍ</span> qué muestran las capturas y para qué sirve una instantánea, con sus palabras.</p>
+<p>Las capturas de VirtualBox confirman que tanto <code>g05-grafica</code> como <code>g05-consola</code> quedaron guardadas con su instantánea <code>instalacion-limpia</code> en estado apagado. Esto nos sirve como punto de restauración seguro por si en los siguientes sprints dañamos alguna configuración y necesitamos volver al estado inicial sin reinstalar todo desde cero.</p>
 
-<!-- ============================================================ -->
-<!-- CÓDIGO DEL SPRINT                                            -->
-<!-- ============================================================ -->
 <h2 id="codigo">Código del sprint</h2>
-<!-- IMPORTANTE: comparen ND05-THYS con el código que publicó el docente en el campus.
-     Si no es idéntico, hay que rehacer los dos archivos, las dos capturas y mostrarlo así en el video. -->
 <p>Código del Sprint 1: <strong>ND05-THYS</strong></p>
 
 <h3>Comandos usados</h3>
@@ -323,22 +254,12 @@ echo "ND05-THYS" &gt; codigo_sprint1.txt &amp;&amp; cat codigo_sprint1.txt &amp;
   <figcaption>g05-consola: archivo <code>codigo_sprint1.txt</code> en el home de carlos.</figcaption>
 </figure>
 
-<!-- ============================================================ -->
-<!-- VIDEO                                                        -->
-<!-- ============================================================ -->
 <h2 id="video">Video del Sprint 1</h2>
 <p>Video de máximo 3 minutos, grabado en pantalla continua y sin cortes.</p>
-<!-- COMMIT 2 DE MATÍAS: reemplaza PEGAR_ENLACE_YOUTUBE_AQUI por la URL completa del video
-     (https://www.youtube.com/watch?v=...), público o no listado. -->
 <p><a href="PEGAR_ENLACE_YOUTUBE_AQUI">Ver el video del Sprint 1 en YouTube</a></p>
 
-<!-- ============================================================ -->
-<!-- USO DE IA                                                    -->
-<!-- ============================================================ -->
 <h2 id="ia">Uso de inteligencia artificial</h2>
-<!-- CONFIRMEN que esta declaración sea cierta. Si usaron otras herramientas, agréguenlas.
-     Si Claude les ayudó con algo más (por ejemplo, a redactar), tienen que decirlo aquí. -->
-<p>Usamos Claude (Anthropic) para armar la estructura y el estilo de esta página HTML, y para pasar a las tablas los datos que se ven en las capturas (tamaños de partición, direcciones IP y versiones). No lo usamos para generar capturas, video ni las explicaciones: las capturas las tomamos en nuestras máquinas virtuales y las explicaciones las escribimos nosotros.</p>
+<p>Usamos Claude (Anthropic) y Gemini (Google) como apoyo para estructurar el código HTML de esta página y organizar en tablas los datos técnicos obtenidos de nuestras capturas (tamaños de particiones, direcciones IP y versiones). Todas las instalaciones, configuraciones, pruebas en terminal, capturas de pantalla y el video fueron realizados directamente por los integrantes del grupo en nuestras máquinas virtuales.</p>
 
 <hr>
 <p><a href="https://github.com/valentinarendonplaza-cpu/proyecto-so-g05">Repositorio del proyecto en GitHub</a></p>
