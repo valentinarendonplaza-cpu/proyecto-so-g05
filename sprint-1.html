@@ -48,19 +48,18 @@
   <tr><td>g05-consola</td><td>Fedora Server</td><td>carlos</td><td>2</td><td>2048 MB</td><td>25 GB</td><td>10.0.2.15 (DHCP)</td><td>192.168.56.102</td></tr>
 </table>
 
-<!-- VALENTINA COMPLETA ESTA SECCIÓN -->
 <h2 id="punto-1">Punto 1 · VM gráfica (g05-grafica)</h2>
 
 <h3>Qué hicimos</h3>
-<p><span class="pendiente">ESCRIBIR AQUÍ</span> qué hicimos para instalar la VM gráfica con particionado manual y qué programas instalamos.</p>
+<p>Instalamos Zorin OS 18.1 en VirtualBox asignando 2 núcleos de CPU, 4096 MB de RAM y un disco duro de 25 GB. Durante la instalación elegimos la opción de particionado manual (<em>Más opciones</em>) para distribuir el espacio entre la raíz, el área de intercambio y la carpeta personal. Después de iniciar sesión con el usuario <code>valentina</code>, instalamos los navegadores y editores solicitados para trabajar en el entorno gráfico.</p>
 
 <h3>Particiones y por qué elegimos ese tamaño</h3>
 <table>
   <tr><th>Partición</th><th>Punto de montaje</th><th>Sistema de archivos</th><th>Tamaño (lsblk)</th><th>Por qué ese tamaño</th></tr>
-  <tr><td>sda1</td><td>/</td><td>ext4</td><td>14 G</td><td><span class="pendiente">ESCRIBIR UNA FRASE</span></td></tr>
-  <tr><td>sda2</td><td>swap</td><td>swap</td><td>1,9 G</td><td><span class="pendiente">ESCRIBIR UNA FRASE</span></td></tr>
-  <tr><td>sda3</td><td>sin montar</td><td>sin sistema de archivos</td><td>286 M</td><td><span class="pendiente">ESCRIBIR qué es esta partición</span></td></tr>
-  <tr><td>sda4</td><td>/home</td><td>ext4</td><td>8,8 G</td><td><span class="pendiente">ESCRIBIR UNA FRASE</span></td></tr>
+  <tr><td>sda1</td><td>/</td><td>ext4</td><td>14 G</td><td>Para tener espacio suficiente para el sistema operativo completo, el entorno gráfico y todos los programas instalados.</td></tr>
+  <tr><td>sda2</td><td>swap</td><td>swap</td><td>1,9 G</td><td>Se dejó cerca de 2 GB como respaldo de memoria virtual para los 4 GB de RAM asignados a la máquina.</td></tr>
+  <tr><td>sda3</td><td>sin montar</td><td>sin sistema de archivos</td><td>286 M</td><td>Partición reservada de arranque (BIOS/EFI) que crea el instalador para poder iniciar el sistema.</td></tr>
+  <tr><td>sda4</td><td>/home</td><td>ext4</td><td>8,8 G</td><td>Para guardar los archivos personales y configuraciones del usuario <code>valentina</code> separados del sistema.</td></tr>
 </table>
 
 <h3>Comandos usados</h3>
@@ -84,9 +83,9 @@ df -h</pre>
   <tr><td>Navegador 1</td><td>Web (GNOME Web)</td><td>46.5</td></tr>
   <tr><td>Navegador 2</td><td>Brave</td><td>158.1.100.59</td></tr>
   <tr><td>Editor 1</td><td>Vim</td><td>9.1</td></tr>
-  <tr><td>Editor 2</td><td><span class="pendiente">ESCRIBIR AQUÍ el segundo editor</span></td><td><span class="pendiente">versión</span></td></tr>
+  <tr><td>Editor 2</td><td>Editor de texto (GNOME)</td><td>Preinstalado en Zorin OS</td></tr>
 </table>
-<p>Comandos usados: <span class="pendiente">ESCRIBIR AQUÍ los comandos que ejecutamos para mostrar las versiones</span>.</p>
+<p>Comandos usados: <code>epiphany --version</code>, <code>brave-browser --version</code> y <code>vim --version</code>.</p>
 
 <figure>
   <img src="img/sprint-1/e1-programas-grafica.1.png" alt="Versiones de Web y Brave, y comienzo de la salida de Vim" loading="lazy">
@@ -102,7 +101,7 @@ df -h</pre>
 </figure>
 
 <h3>Explicación</h3>
-<p><span class="pendiente">ESCRIBIR AQUÍ</span> qué muestra cada captura de este punto, con sus palabras.</p>
+<p>En las primeras capturas se muestra cómo quedó dividido el disco de 25 GB tanto desde la herramienta gráfica de Discos como desde la terminal con <code>lsblk</code> y <code>df -h</code>, confirmando el montaje de la raíz y el directorio <code>/home</code>. En las siguientes capturas se comprueban desde la consola las versiones instaladas de los navegadores GNOME Web y Brave, junto con el editor Vim.</p>
 
 <h2 id="punto-2">Punto 2 · VM consola (g05-consola)</h2>
 
